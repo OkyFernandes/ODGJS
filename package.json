@@ -1,0 +1,14 @@
+{
+  "name": "mycashier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "dindapm",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^29.1.4"
+  }
+}
