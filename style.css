@@ -1,0 +1,160 @@
+/* Menetapkan font dasar untuk seluruh halaman dan warna background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Styling untuk container yang mengelompokkan konten utama */
+.container {
+  max-width: 700px; /* Maksimum lebar container */
+  margin: 30px auto; /* Atur margin atas bawah 30px dan secara otomatis rata tengah secara horizontal */
+  background: #fff; /* Warna background putih */
+  padding: 20px; /* Padding di sekeliling konten dalam container */
+  border-radius: 5px; /* Bulatkan sudut-sudut container */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Bayangan kotak untuk efek tiga dimensi */
+}
+
+/* Styling untuk judul h1, biasanya judul utama dari halaman */
+h1 {
+  text-align: center; /* Rata tengah teks */
+  color: #333; /* Warna teks gelap */
+  margin-bottom: 1em; /* Margin bawah untuk memberikan ruang di bawah judul */
+}
+
+/* Styling untuk elemen label */
+label {
+  display: block; /* Elemen label akan menampilkan sebagai blok */
+  margin: 10px 0 5px; /* Margin atas dan bawah label */
+}
+
+/* Styling untuk elemen input jenis number dan text */
+input[type="number"],
+input[type="text"] {
+  width: 100%; /* Input akan memenuhi lebar container */
+  padding: 10px; /* Padding di sekeliling dalam input */
+  margin-bottom: 10px; /* Margin bawah setelah input */
+  border: 1px solid #ddd; /* Batas tipis dengan warna abu-abu muda */
+  border-radius: 4px; /* Sudut input sedikit dibulatkan */
+ 
+  box-sizing: border-box; /* Ukuran border dan padding akan termasuk dalam lebar dan tinggi total element */
+}
+
+/* Styling untuk semua button */
+button {
+  width: 100%; /* Button akan memenuhi lebar container */
+  padding: 10px; /* Padding di sekeliling dalam button */
+  background-color: #ff8e8e; /* Warna background button */
+  color: white; /* Warna teks pada button */
+  border: none; /* Tanpa border */
+  border-radius: 10px; /* Bulatkan sudut button */
+  cursor: pointer; /* Cursor akan berubah menjadi pointer ketika mouse hover di atas button */
+}
+
+/* Efek hover pada button */
+button:hover {
+  background-color: #ffcece; /* Ubah warna background button ketika di-hover */
+}
+
+/* Styling untuk table */
+table {
+  width: 100%; /* Table akan memenuhi lebar container */
+  border-collapse: collapse; /* Menghilangkan double-border di antara sel */
+  margin-top: 20px; /* Margin atas table */
+}
+
+/* Styling untuk header dan cell pada table */
+th,
+td {
+  text-align: left; /* Rata kiri teks dalam header dan cell */
+  padding: 10px; /* Padding di sekeliling dalam header dan cell */
+  border: 1px solid #ddd; /* Batas tipis dengan warna abu-abu muda */
+}
+
+/* Styling khusus untuk header table */
+th {
+  background-color: #4CAF50; /* Warna hijau untuk header tabel */
+  color: white; /* Warna teks putih pada header tabel */
+}
+
+/* Styling zebra striping untuk baris table */
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Baris genap berwarna abu-abu muda */
+}
+
+/* Styling khusus untuk bagian keranjang */
+#cart {
+background: #ffc0cb; /* Warna merah muda untuk latar belakang keranjang */
+  border-radius: 20px; /* Bulatkan sudut-sudut keranjang */
+  padding: 10px; /* Padding di dalam keranjang */
+  max-width: 100%; /* Keranjang akan memenuhi 100% lebar dari kontainer induknya */
+  margin: 60px auto; /* Margin atas dan bawah keranjang, serta otomatis di kiri dan kanan untuk rata tengah */
+}
+
+#cart h2 {
+  text-align: center; /* Judul keranjang rata tengah */
+  margin-bottom: 15px; /* Margin di bawah judul keranjang */
+}
+
+#cart-items {
+  background: #fff; /* Latar belakang item keranjang berwarna putih */
+  border-radius: 8px; /* Sudut item keranjang sedikit dibulatkan */
+  padding: 10px; /* Padding di dalam item keranjang */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan kotak untuk efek tiga dimensi pada item keranjang */
+}
+
+#cart-items div {
+  display: flex; /* Menggunakan flexbox untuk layout item keranjang */
+  justify-content: space-between; /* Mengatur jarak sama rata antara elemen dalam flex container */
+  align-items: center; /* Menengahkan item-item pada sumbu vertikal */
+  margin-bottom: 10px; /* Margin di bawah setiap item keranjang */
+}
+
+#cart-items div button {
+  background: #f88; /* Warna tombol dalam item keranjang */
+  border: none; /* Tidak ada border pada tombol */
+  padding: 5px 10px; /* Padding di dalam tombol */
+  border-radius: 6px; /* Bulatkan sudut tombol */
+  cursor: pointer; /* Cursor berubah menjadi pointer saat hover */
+}
+
+#cart-items div button:hover {
+  background: #f66; /* Warna tombol saat di-hover lebih gelap dari warna asli */
+}
+
+/* Styling untuk struk belanja */
+#receipt {
+  font-family: 'Courier New', Courier, monospace; /* Font monospace untuk tampilan seperti struk */
+  margin-top: 1em; /* Margin atas untuk struk */
+  margin: 20px auto; /* Margin atas dan bawah serta rata tengah secara horizontal */
+  padding: 1em; /* Padding di dalam struk */
+  background: #fff; /* Latar belakang struk berwarna putih */
+  border: 1px solid #ddd; /* Border struk tipis berwarna abu-abu muda */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan kotak untuk efek tiga dimensi pada struk */
+  display: block; /* Memastikan struk ditampilkan sebagai blok */
+}
+
+#receipt h2 {
+  font-size: 1em; /* Ukuran font untuk judul struk */
+  border-bottom: 1px dashed #aaa; /* Garis bawah putus-putus untuk judul struk */
+  margin-bottom: 0.5em; /* Margin bawah untuk judul struk */
+}
+
+#receipt-details {
+  font-size: 0.875em; /* Ukuran font untuk detail struk */
+}
+
+#receipt-total,
+#receipt-payment,
+#receipt-change {
+  font-weight: bold; /* Membuat teks total, pembayaran, dan kembalian menjadi tebal */
+  margin-top: 1em; /* Margin atas untuk total, pembayaran, dan kembalian */
+}
+
+.print-button {
+  background-color: #f44336; /* Warna latar belakang tombol cetak */
+  margin-top: 1em; /* Margin atas untuk tombol cetak */
+}
+
+.print-button:hover {
+  background-color: #d32f2f; /* Warna latar belakang tombol cetak saat di-hover */
+}
