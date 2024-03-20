@@ -3,35 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kasir Sederhana</title>
-  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Kasir</title>
 </head>
 <body class="bg-gray-100 p-6">
-  <div class="mb-4">
-    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama Barang</label>
-    <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" placeholder="Masukkan nama barang">
-
-    <label for="price" class="block text-gray-700 text-sm font-bold mb-2">Harga Barang</label>
-    <input type="number" id="price" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" placeholder="Masukkan harga barang">
-
-    <button onclick="addItem()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">Tambah Barang</button>
+  <div class="container mx-auto">
+    <!-- Judul toko -->
+    <h1 class="text-center font-bold text-xl mb-6">TOKO HARAPAN BAHAGIA</h1>
+    <!-- Input kode produk -->
+    <div class="mb-4">
+      <label for="product-code" class="block text-gray-700 text-sm font-bold mb-2">Kode Produk:</label>
+      <input type="number" id="product-code" class="shadow border rounded py-2 px-3 w-full" placeholder="Masukkan kode produk">
+      <button onclick="searchProduct()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">Cari Produk</button>
+    </div>
+    <!-- Informasi produk -->
+    <div id="product-info" class="mb-4"></div>
+    <!-- Keranjang belanja -->
+    <div id="cart" class="mb-4">
+      <h2 class="text-lg font-bold">Keranjang</h2>
+      <div id="cart-items"></div>
+    </div>
+    <!-- Total pembelian -->
+    <div id="total" class="mb-4">
+      <h2 class="text-lg font-bold">Total Pembelian:</h2>
+      <div id="total-amount" class="text-lg"></div>
+    </div>
+    <!-- Informasi pembayaran dan kembalian -->
+    <div id="payment-info" class="mb-4">
+      <input type="number" id="amount-paid" placeholder="Jumlah Uang Dibayar" class="shadow border rounded py-2 px-3 w-full" />
+      <button onclick="processPayment()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">Proses Pembayaran</button>
+      <div id="change-amount" class="mt-2 text-lg"></div>
+    </div>
+    <!-- Struk belanja -->
+    <div id="receipt" class="hidden">
+      <h2 class="text-lg font-bold mb-2">Struk Belanja</h2>
+      <div id="receipt-details"></div>
+      <div id="receipt-total" class="font-bold"></div>
+      <div id="receipt-payment" class="font-bold"></div>
+      <div id="receipt-change" class="font-bold"></div>
+    </div>
+    <!-- Tombol cetak struk -->
+    <button onclick="displayReceipt()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">
+      Cetak Struk
+    </button>
   </div>
-
-  <div class="mb-4">
-    <input type="text" id="search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3" placeholder="Cari barang...">
-    <button onclick="searchItem()" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Cari Barang</button>
-  </div>
-
-  <div id="item-list" class="mb-4">
-    <!-- Daftar barang akan ditampilkan di sini -->
-  </div>
-
-  <button onclick="printReceipt()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Cetak Struk</button>
-
-  <div id="receipt" class="mt-8">
-    <!-- Struk belanja akan ditampilkan di sini -->
-  </div>
-
   <script src="script.js"></script>
 </body>
 </html>
