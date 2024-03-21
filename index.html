@@ -1,49 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Kasir</title>
+  <title>Kasir sederhana</title>
 </head>
 <body class="bg-gray-100 p-6">
   <div class="container mx-auto">
-    <!-- Judul toko -->
+    <!-- Judul Toko -->
     <h1 class="text-center font-bold text-xl mb-6">TOKO HARAPAN BAHAGIA</h1>
-    <!-- Input kode produk -->
+    <!-- Input Kode Produk -->
     <div class="mb-4">
-      <label for="product-code" class="block text-gray-700 text-sm font-bold mb-2">Kode Produk:</label>
-      <input type="number" id="product-code" class="shadow border rounded py-2 px-3 w-full" placeholder="Masukkan kode produk">
-      <button onclick="searchProduct()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">Cari Produk</button>
+      <label for="kode-produk" class="block text-gray-700 text-sm font-bold mb-2">Kode Produk:</label>
+      <input type="number" id="kode-produk" class="shadow border rounded py-2 px-3 w-full" placeholder="Masukkan kode produk">
+      <button onclick="cariProduk()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">Cari Produk</button>
     </div>
-    <!-- Informasi produk -->
-    <div id="product-info" class="mb-4"></div>
-    <!-- Keranjang belanja -->
-    <div id="cart" class="mb-4">
+    <!-- Informasi Produk -->
+    <div id="info-produk" class="mb-4"></div>
+    <!-- Keranjang Belanja -->
+    <div id="keranjang" class="mb-4">
       <h2 class="text-lg font-bold">Keranjang</h2>
-      <div id="cart-items"></div>
+      <div id="item-keranjang"></div>
     </div>
-    <!-- Total pembelian -->
+    <!-- Total Pembelian -->
     <div id="total" class="mb-4">
       <h2 class="text-lg font-bold">Total Pembelian:</h2>
-      <div id="total-amount" class="text-lg"></div>
+      <div id="jumlah-total" class="text-lg"></div>
     </div>
-    <!-- Informasi pembayaran dan kembalian -->
-    <div id="payment-info" class="mb-4">
-      <input type="number" id="amount-paid" placeholder="Jumlah Uang Dibayar" class="shadow border rounded py-2 px-3 w-full" />
-      <button onclick="processPayment()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">Proses Pembayaran</button>
-      <div id="change-amount" class="mt-2 text-lg"></div>
+    <!-- Informasi Pembayaran dan Kembalian -->
+    <div id="info-pembayaran" class="mb-4">
+      <input type="number" id="uang-dibayar" placeholder="Jumlah Uang Dibayar" class="shadow border rounded py-2 px-3 w-full" />
+      <button onclick="prosesPembayaran()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">Proses Pembayaran</button>
+      <div id="jumlah-kembalian" class="mt-2 text-lg"></div>
     </div>
-    <!-- Struk belanja -->
-    <div id="receipt" class="hidden">
+    <!-- Struk Belanja -->
+    <div id="struk" class="hidden">
       <h2 class="text-lg font-bold mb-2">Struk Belanja</h2>
-      <div id="receipt-details"></div>
-      <div id="receipt-total" class="font-bold"></div>
-      <div id="receipt-payment" class="font-bold"></div>
-      <div id="receipt-change" class="font-bold"></div>
+      <div id="detail-struk"></div>
+      <div id="total-struk" class="font-bold"></div>
+      <div id="pembayaran-struk" class="font-bold"></div>
+      <div id="kembalian-struk" class="font-bold"></div>
     </div>
-    <!-- Tombol cetak struk -->
-    <button onclick="displayReceipt()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">
+    <!-- Tombol Cetak Struk -->
+    <button onclick="tampilkanStruk()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">
       Cetak Struk
     </button>
   </div>
