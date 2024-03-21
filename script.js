@@ -6,7 +6,7 @@ const produk = [
 ];
 
 // let dan const sama-sama untuk mendeklarasikan array 
-// const digunakan apabila ingin menaruh nilai yang konsisten 
+// const digunakan apabila ingin menaruh nilai yang konsisten atau hasil yang tetap 
 // let digunakan apabila nilai array ingin lebih fleksibel untuk diubah
 
 let keranjang = []; // Array kosong untuk menaruh barang yang dipilih ke dalam keranjang
@@ -37,12 +37,17 @@ function tampilkanProduk(produk) { // Fungsi untuk menampilkan produk dan nantin
 function tambahKeKeranjang(idProduk) {
   // Fungsi untuk menambahkan produk ke dalam keranjang atau cart
   const kuantitasInput = document.getElementById(`kuantitas-${idProduk}`).value;
-  const kuantitas = parseInt(kuantitasInput) || 1;
+  const kuantitas =
+    parseInt(
+      //parseInt adalah sebuah fungsi dalam JavaScript yang digunakan untuk mengubah string menjadi bilangan bulat.
+      kuantitasInput
+    ) || //operator || dikenal sebagai operator "OR" logis. Ia digunakan untuk mengembalikan nilai pertama yang "truthy" (benar) dari dua ekspresi atau lebih yang dibandingkan. Jika semua nilai adalah "falsy" (salah), maka nilai terakhir akan dikembalikan.
+    1;
   const produkDitemukan = produk.find((p) => p.id === idProduk);
-  const itemIndex = keranjang.findIndex((item) => item.id === idProduk);
+  const itemProduk = keranjang.findIndex((item) => item.id === idProduk);
 
-  if (itemIndex > -1) {
-    keranjang[itemIndex].kuantitas += kuantitas;
+  if (itemProduk > -1) {
+    keranjang[itemProduk].kuantitas += kuantitas;
   } else {
     keranjang.push({ ...produkDitemukan, kuantitas });
   }
@@ -65,7 +70,7 @@ function tampilkanKeranjang() {
     </div>
   `
     )
-    .join("");
+    .join(""); // menggambungkan hasil jadi nanti hasilnya keluar bareng
     perbaruiTotal();
 } // Memperbarui total setelah perubahan keranjang
 
@@ -88,7 +93,7 @@ function hapusDariKeranjang(indeks) {
   // Angka 1 menunjukkan bahwa kita ingin menghapus satu item saja dari posisi tersebut.
   tampilkanKeranjang();
   perbaruiTotal();
-  // Setelah menghapus item dari keranjang, kita perlu memperbarui tampilan keranjang dan total harga.
+  // Setelah menghapus item dari keranjang, kode ini untuk memperbarui tampilan keranjang dan total harga.
 }
 
 function perbaruiTotal() {
